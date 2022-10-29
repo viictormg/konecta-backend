@@ -7,12 +7,11 @@ import (
 )
 
 type Config struct {
-	Host       string
-	UserDB     string
-	PasswordDB string
-	HostDB     string
-	NameDB     string
-	JwtSecret  string
+	Host           string
+	MongoPassword  string
+	MongoUser      string
+	MongoURL       string
+	MongoMechanism string
 }
 
 func NewConfig() (Config, error) {
@@ -23,11 +22,10 @@ func NewConfig() (Config, error) {
 	}
 
 	return Config{
-		Host:       os.Getenv("HTTP_ADDR"),
-		UserDB:     os.Getenv("USER_DB"),
-		PasswordDB: os.Getenv("PASSWORD_DB"),
-		HostDB:     os.Getenv("HOST_DB"),
-		NameDB:     os.Getenv("NAME_DB"),
-		JwtSecret:  os.Getenv("JWT_SECRET"),
+		Host:           os.Getenv("HTTP_ADDR"),
+		MongoPassword:  os.Getenv("MONGODB_PASSWORD"),
+		MongoUser:      os.Getenv("MONGODB_USER"),
+		MongoURL:       os.Getenv("MONGODB_URL"),
+		MongoMechanism: os.Getenv("MONGODB_MECHANISM"),
 	}, nil
 }

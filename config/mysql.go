@@ -1,27 +1,23 @@
 package config
 
 import (
-	"database/sql"
-	"fmt"
-	"log"
-
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func InitDB(config Config) (*sql.DB, error) {
+// func InitDB(config Config) (*sql.DB, error) {
 
-	url := fmt.Sprintf("%s:%s@tcp(%s)/%s",
-		config.UserDB,
-		config.PasswordDB,
-		config.HostDB,
-		config.NameDB,
-	)
+// 	url := fmt.Sprintf("%s:%s@tcp(%s)/%s",
+// 		config.UserDB,
+// 		config.PasswordDB,
+// 		config.HostDB,
+// 		config.NameDB,
+// 	)
 
-	db, err := sql.Open("mysql", url)
+// 	db, err := sql.Open("mysql", url)
 
-	if err != nil {
-		log.Panic(err)
-	}
+// 	if err != nil {
+// 		log.Panic(err)
+// 	}
 
-	return db, err
-}
+// 	return db, err
+// }

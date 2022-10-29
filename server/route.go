@@ -6,4 +6,6 @@ func (s *Server) RegisterRoute(app *fiber.App) {
 	routes := app.Group("/api")
 
 	routes.Post("/test", s.TestHadler)
+	routes.Get("/auth", s.AuthKonecta)
+	routes.Get("/dashboard", s.GetDashboard)
 }

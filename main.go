@@ -21,7 +21,7 @@ func run() error {
 		return err
 	}
 
-	repository := repository.NewRepository(db)
+	repository := repository.NewRepository(db.Database("konecta"))
 	feature := feature.NewFeature(repository)
 
 	srv := server.NewServer(cfg, feature)
